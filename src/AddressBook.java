@@ -5,10 +5,23 @@ public class AddressBook {
 	private String city;
 	private String state;
 	private int zip;
-	private String phoneNo;
+	private long phoneNo;
 	private String email;
 	public String getFirstName() {
 		return firstName;
+	}
+	public AddressBook(String firstName ,String lastName ,String address, String city,
+	          String state,long phoneNo,String email,int zip) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.phoneNo = phoneNo;
+		this.email = email;
+		this.zip = zip;
+		
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -38,10 +51,10 @@ public class AddressBook {
 		this.state = state;
 		
 	}
-	public String getPhoneNo() {
+	public long getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(String phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 		
 	}
