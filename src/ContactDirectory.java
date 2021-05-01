@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
+
 public class ContactDirectory{
 	String firstName,lastName,address,city,state,email,m;
     int zip;
@@ -82,10 +84,34 @@ public class ContactDirectory{
 	    	}
     	}
     }
-	public void show() {
+    public void deleteContact() {
+    	System.out.println("Enter First Name");
+    	String Name = scanner.next();
+    	if (contacts.isEmpty()) {
+			System.out.println("AddressBook is empty");
+		}
+    	else {
+    		for(int i = 0 ; i<contacts.size();i++) {
+	    		m = contacts.get(i).getFirstName();
+	    		
+				if(m.equalsIgnoreCase(Name)) {
+					contacts.remove(i);
+					System.out.println("contact deleted");
+				}
+				else {
+					System.out.println("Name not found");
+				}
+					
+    		}
+    	}
+    }
+    public void show() {
+    	System.out.println("No. of contacts in the contact directory: " +contacts.size());
 		for(int i = 0 ; i<contacts.size();i++) {
 			System.out.println(contacts.get(i));
-		}
-	}
+		
+			}
+    	}
+    
 }
         
