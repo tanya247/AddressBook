@@ -70,6 +70,8 @@ public class AddressBook {
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-	
+	public String getName() {
+		return firstName+" "+lastName;
+	}
 
 }

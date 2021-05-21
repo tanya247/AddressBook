@@ -15,6 +15,7 @@ public class AddressBookMain {
 			System.out.println("If you want to see contact directory press 1");
 			System.out.println("If you want to edit contact directory press 2");
 			System.out.println("If you want to delete contact directory press 3");
+			System.out.println("If you want to search by city or state , press 4");
 			int fm = sc.nextInt();
 			if (fm==1) {
 				ac.show();
@@ -25,6 +26,9 @@ public class AddressBookMain {
 			if (fm==3) {
 				ac.deleteContact();
 			}
+			if (fm == 4) {
+				ac.searchContact();
+			}
 			
 			break;
 	
@@ -32,6 +36,7 @@ public class AddressBookMain {
 			ac.editContact();
 			System.out.println("If you want to see contact directory press 1");
 			System.out.println("If you want to delete contact directory press 2");
+			System.out.println("If you want to search by city or state , press 3");
 			int f = sc.nextInt();
 			if (f==1) {
 				ac.show();
@@ -39,13 +44,20 @@ public class AddressBookMain {
 			if (f==2) {
 				ac.deleteContact();
 			}
+			if(f==3) {
+				ac.searchContact();
+			}
 			break;
 		case 3:
 			ac.deleteContact();
 			System.out.println("If you want to see contact directory press 1");
+			System.out.println("If you want to search by city or state , press 2");
 			int fo = sc.nextInt();
 			if (fo==1) {
 				ac.show();
+			}
+			if (fo==2) {
+				ac.searchContact();
 			}
 			break;
 				
@@ -53,6 +65,8 @@ public class AddressBookMain {
 			System.out.println("No. of contacts in the contact directory: ");
 			ac.show();
 			break;
+		case 5:
+			ac.searchContact();
 		default:
 			System.out.println("Invalid Choice");
 			break;

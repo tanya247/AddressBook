@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.List;
+
 import java.util.ArrayList;
 
 
@@ -35,7 +38,7 @@ public class ContactDirectory{
 			    String state = scanner.next();
 			    
 			    System.out.println("Enter the email :");
-			    String email = scanner.nextLine();
+			    String email = scanner.next();
 			    
 			    System.out.println("Enter the mobile number :");
 			    long phoneNo = scanner.nextLong();
@@ -110,11 +113,46 @@ public class ContactDirectory{
 				}
 				else {
 					System.out.println("Name not found");
-				}
-					
+				}	
     		}
     	}
     }
+    public ArrayList<AddressBook> getContact() {
+		return contacts;
+	}
+    public void searchContact() {
+		Scanner sc = new Scanner(System.in);
+    	System.out.println("Search by City or State ");
+    	System.out.println("Enter 1 for Search by city");
+    	System.out.println("Enter 2 for Search by State");
+    	ArrayList<AddressBook> contacts = this.getContact();
+    	int m = sc.nextInt();
+    	if (contacts.isEmpty()) {
+			System.out.println("AddressBook is empty");
+		}
+    	else {
+    		if (m == 1) {
+				System.out.println("Enter the City name :");
+				String cityName = sc.next();
+				List<AddressBook> list  = contacts.stream().filter(p ->p.getCity().equals(cityName)).collect(Collectors.toList());
+		        for(AddressBook addressbook: list){
+		            System.out.println("First Name: "+addressbook.getFirstName());
+		            System.out.println("Last Name: "+addressbook.getLastName());
+		        }
+			} else if(m == 2) {
+				System.out.println("Enter the State name :");
+				String stateName = sc.next();
+				List<AddressBook> list  = contacts.stream().filter(p ->p.getState().equals(stateName)).collect(Collectors.toList());
+		        for(AddressBook addressbook: list){
+		            System.out.println("First Name: "+addressbook.getFirstName());
+		            System.out.println("Last Name: "+addressbook.getLastName());
+		        }
+			}else {
+				System.out.println("Invalid choice");
+			}
+    	}
+    }
+    
     public void show() {
     	System.out.println("No. of contacts in the contact directory: " +contacts.size());
 		for(int i = 0 ; i<contacts.size();i++) {
