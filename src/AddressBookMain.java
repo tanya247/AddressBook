@@ -12,7 +12,6 @@ public class AddressBookMain {
 		//first name
 		case 1 :
 			ac.addContact();
-			System.out.println("Contact added");
 			System.out.println("If you want to see contact directory press 1");
 			System.out.println("If you want to edit contact directory press 2");
 			System.out.println("If you want to delete contact directory press 3");
