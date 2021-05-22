@@ -3,7 +3,7 @@ public class AddressBookMain {
 	ContactDirectory ac = new ContactDirectory();
 	public void addressBookMain() {
 		Scanner sc = new Scanner(System.in);
-		
+		addressBookOperations();
 		System.out.println("Do u wqant to proceed , say Yes/No");
 		String ch = sc.next();
 		while(ch.equals("Yes")) {
@@ -46,7 +46,7 @@ public class AddressBookMain {
 			ac.countPerson();
 			break;
 		case 7:
-			ac.sortNameAlphabetically();
+			ac.sortedEntries();;
 			break;
 		default:
 			System.out.println("Invalid Choice");
