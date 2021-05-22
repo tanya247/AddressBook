@@ -12,6 +12,7 @@ public class MultipleAddressBook {
 			System.out.println("Please Enter the name of Address Book : ");
 			String addressBookName =scanner.nextLine();
 			abm.addressBookMain();
+			System.out.println("Adressbook added");
 			hmap.put(addressBookName , abm);
 		}
 	}

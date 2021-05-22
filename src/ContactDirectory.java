@@ -189,10 +189,15 @@ public class ContactDirectory{
 				System.out.println(countByCity);
     		}
     	}
-   			
-    	
     }
-    
+    public void sortNameAlphabetically() {
+    	ArrayList<AddressBook> contacts = this.getContact();
+    	 List<AddressBook> sortedList = contacts.stream().sorted(Comparator.comparing(AddressBook::getName)).collect(Collectors.toList());
+
+         for(AddressBook contact:sortedList){
+             System.out.println("Name: "+contact.getName());
+         }
+    }
     public void show() {
     	System.out.println("No. of contacts in the contact directory: " +contacts.size());
 		for(int i = 0 ; i<contacts.size();i++) {
